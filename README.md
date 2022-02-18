@@ -14,7 +14,29 @@ Atau
 
 Endpoints:
 
-1. mendapatkan informasi mengenai course yang tersedia
+1. register admin
+
+POST https://courselearningapi.herokuapp.com/admin/register
+
+body type json:
+{
+    "username":String,
+    "email":String,
+    "password":String,
+    "image":String
+}
+
+2. login untuk mendapatkan JsonWebToken agar dapat mengakses API
+
+POST https://courselearningapi.herokuapp.com/admin/login
+
+body tupe json:
+{
+    "email":String,
+    "password":String
+}
+
+2. mendapatkan informasi mengenai course yang tersedia
 
 GET https://courselearningapi.herokuapp.com/admin/courses - mendapatkan semua courses
 
