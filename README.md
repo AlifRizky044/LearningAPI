@@ -75,4 +75,52 @@ body dalam bentuk json berisi data yang ingin diubah meliputi
     "price": Number
 }
 
-6. 
+6. Create course
+
+POST https://courselearningapi.herokuapp.com/admin/add-courses
+
+body type json:
+{   "image":String Imagebase64,
+    "title":String,
+    "description":String,
+    "category":String id category,
+    "creator":String,
+    "price":Number
+}
+
+7. Delete course
+
+DELETE https://courselearningapi.herokuapp.com/admin/del-courses/:id
+
+:id diubah menjadi id mongodb courses.
+
+8. Delete users (soft delete hanya mengubah flag user menjadi 0 = inactive)
+
+DELETE https://courselearningapi.herokuapp.com/admin/del-users/:id
+:id diubah menjadi id mongodb users.
+
+9. mendapatkan informasi mengenai user yang tersedia
+
+GET  https://courselearningapi.herokuapp.com/admin/users - mendapatkan semua users
+
+Jika ingin mencari informasi spesifik seperti email user dapat di query dengan cara menambahkan ?email=value
+
+GET https://courselearningapi.herokuapp.com/admin/users?email=alif - mendapatkan semua user dengan email mengandung string alif
+
+Model user
+
+username:String
+email:String email
+password:string
+image:String
+image_id:String
+flag:Number
+
+10. Create Category Courses
+
+POST  https://courselearningapi.herokuapp.com/admin/add-category
+
+body type json:
+{
+    "title":String
+}
