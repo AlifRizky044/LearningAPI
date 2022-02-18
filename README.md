@@ -12,7 +12,7 @@ Atau
 1. buka https://courselearningapi.herokuapp.com/users atau https://courselearningapi.herokuapp.com/admin di Postman untuk menggunakan API
 
 
-Endpoints:
+ADMIN Endpoints:
 
 1. register admin
 
@@ -124,3 +124,41 @@ body type json:
 {
     "title":String
 }
+
+11. Delete Category Courses
+
+DELETE  https://courselearningapi.herokuapp.com/admin/del-category/:id
+
+:id diubah menjadi id mongodb category.
+
+
+USERS Endpoints:
+1. register user
+
+POST https://courselearningapi.herokuapp.com/users/register
+
+body type json:
+{
+    "username":String,
+    "email":String,
+    "password":String,
+    "image":String
+}
+
+2. login untuk mendapatkan JsonWebToken agar dapat mengakses API
+
+POST https://courselearningapi.herokuapp.com/users/login
+
+body tupe json:
+{
+    "email":String,
+    "password":String
+}
+
+3. Mendapatkan category course terpopuler
+
+GET https://courselearningapi.herokuapp.com/users/category-popular
+
+4. 
+
+
