@@ -36,7 +36,7 @@ body tupe json:
     "password":String
 }
 
-2. mendapatkan informasi mengenai course yang tersedia
+3. mendapatkan informasi mengenai course yang tersedia
 
 GET https://courselearningapi.herokuapp.com/admin/courses - mendapatkan semua courses
 
@@ -53,3 +53,26 @@ Model courses
 "image": String
 "image_id": String
 "price": Number
+
+4. mendapatkan Informasi jumlah user, jumlah courses, dan jumlah courses yang gratis
+
+GET https://courselearningapi.herokuapp.com/admin/courses/statistics
+
+5. Mengupdate data courses
+
+POST https://courselearningapi.herokuapp.com/admin//upd-courses/:id
+
+:id diubah menjadi id mongodb courses.
+
+body dalam bentuk json berisi data yang ingin diubah meliputi
+{
+    "title": String
+    "description": String
+    "category": String
+    "creator": String
+    "image": String
+    "image_id": String
+    "price": Number
+}
+
+6. 
