@@ -29,7 +29,7 @@ var {userSchema,userSchemaLogin} = require("../api/hapijoi.js");
 // }); 
 
 const getCourses = async (req,res)=>{
-    if(req.query.length > 0){
+    if(Object.keys(req.query).length > 0){
         var query = req.query;
         try{
     

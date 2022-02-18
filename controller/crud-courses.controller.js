@@ -95,10 +95,12 @@ const statisticCourses = async (req, res) =>{
     var data = {};
 
     Promise.all([
+        Users.countDocuments({name: 'users'}),
         CoursesMessage.countDocuments({name: 'courses'}),
         CoursesMessage.countDocuments({price: 0})
-      ]).then( ([ course, free ]) => {
+      ]).then( ([ user, course, free ]) => {
         let result = {
+            'total-users':user,
             'total-course':course,
             'free-course':free
         };
@@ -107,7 +109,8 @@ const statisticCourses = async (req, res) =>{
 }
 
 const getUsers = async (req, res) =>{
-    if(req.query.length > 0){
+    console.log(Object.keys(req.query).length);
+    if(Object.keys(req.query).length > 0){
         var query = req.query;
         try{
     
@@ -124,6 +127,7 @@ const getUsers = async (req, res) =>{
             res.json(e);
         }
     }else{
+        console.log('hai');
         Users.find()
                     .then(posts=>res.json(posts))
                     .catch(err=>res.status(400).json('Error: '+err));
