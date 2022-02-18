@@ -1,6 +1,9 @@
 # LearningAPI
 
 Demo API online course platform untuk user dan admin.
+API dikembangkan dengan Node.js
+Database manggunakan Mongodb
+Image upload ke cloudinary
 
 Cara Install:
 1. Install semua dependency yang di butuhkan dengan 'npm install' (tanpa petik)
@@ -159,6 +162,32 @@ body tupe json:
 
 GET https://courselearningapi.herokuapp.com/users/category-popular
 
-4. 
+4. Mendapatkan category Course
+
+GET https://courselearningapi.herokuapp.com/users/category
+
+5. Sort course
+
+GET https://courselearningapi.herokuapp.com/users/courses?sort=value
+
+value diganti dengan asc untuk sort secara ascending, desc untuk sort secara descending, dan 0 untuk course yang gratis.
+
+6. Get course, get detail course dan search course
+
+GET https://courselearningapi.herokuapp.com/users/courses
+untuk mendapatkan semua course yang tersedia
+
+GET https://courselearningapi.herokuapp.com/users/courses?title=python
+untuk mencari course secara spesifik tambahkan query seperti endpoints diatas, untuk search title course yang mengandung string python
+
+bisa mencari detail dan search course dari model course berikut:
+"title": String
+"description": String
+"category": String
+"creator": String
+"image": String
+"image_id": String
+"price": Number
+
 
 
